@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { createContext, useReducer } from 'react';
 import reducer from './Context/ContextReducer';
