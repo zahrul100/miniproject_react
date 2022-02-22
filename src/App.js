@@ -1,8 +1,6 @@
 import './App.css';
 import { createContext, useReducer } from 'react';
 import reducer from './Context/ContextReducer';
-import Login from './pages/globalComponent/login/Login';
-import Register from './pages/globalComponent/register/Register';
 import { BrowserRouter as Router } from "react-router-dom";
 import AppRouters from './routes/AppRouters';
 
