@@ -144,7 +144,11 @@ const Content = () => {
         Program We Offer at <br /> Techconnect Academy
       </Typography>
 
-      <Grid container paddingX="10px" marginTop="30px" justifyContent="center">
+      <Grid
+        container
+        paddingX="10px"
+        marginTop="30px"
+      >
         <Grid item md={3} sm={12} xs={12} sx={{ marginBottom: "10px" }}>
           <Card
             sx={{

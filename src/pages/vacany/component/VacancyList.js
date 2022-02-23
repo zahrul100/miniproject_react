@@ -12,31 +12,12 @@ import program1 from "../../../asset/image/program1.png";
 import program2 from "../../../asset/image/program2.png";
 import program3 from "../../../asset/image/program3.png";
 import program4 from "../../../asset/image/program4.png";
-import Box from "@mui/material/Box";
 import ResponsiveAppBar from "../../globalComponent/navbar/Appbar";
 import Footer from "../../globalComponent/footer/Footer";
 import PaginationRounded from "../../globalComponent/pagination/Pagination";
 
 const Vacancy = ({ bloc }) => {
   const { list, getListJobInformation, navigate } = bloc();
-  const program = [
-    {
-      id: 1,
-      backgroundImage: `url(${program1})`,
-    },
-    {
-      id: 2,
-      backgroundImage: `url(${program2})`,
-    },
-    {
-      id: 3,
-      backgroundImage: `url(${program3})`,
-    },
-    {
-      id: 4,
-      backgroundImage: `url(${program4})`,
-    },
-  ];
   useEffect(() => {
     getListJobInformation();
   }, []);
@@ -46,15 +27,23 @@ const Vacancy = ({ bloc }) => {
       <MyComponent>
         <ResponsiveAppBar />
         <Typography
-          textAlign="center"
-          fontFamily="Montserrat Alternates"
-          fontWeight="550"
-          letterSpacing="7px"
-          paddingY="40px"
-          sx={{ color:"#434343",
-          typography: {lg:"h2",sm: 'h5', xs: 'h5',  fontFamily:"Montserrat Alternates"},
-          }}
-        >
+            textAlign="center"
+            sx={{
+              typography: { lg: "h3", sm: "h4", xs: "h4" },
+              fontWeight: {
+                lg: "600",
+                md: "600",
+                sm: "600",
+                xs: "600",
+              },
+              fontFamily: {
+                lg: "Montserrat Alternates",
+                md: "Montserrat Alternates",
+                sm: "Montserrat Alternates",
+                xs: "Montserrat Alternates",
+              },
+            }}
+          >
           Find your dream career in
           <br />
           Techconnect Academy
@@ -68,11 +57,10 @@ const Vacancy = ({ bloc }) => {
         >
           {list.map((value, idx) => {
             return (
-              <Grid items md={6} sm={12} xs={12} sx={{ marginBottom: "15px" }}>
+              <Grid   key={idx} item md={6} sm={12} xs={12} sx={{ marginBottom: "15px" }}>
                 <Card
-                  key={idx}
                   sx={{
-                    backgroundImage: `${value.photo_url}`,
+                    backgroundImage: `url(${value.photo_url})`,
                     height: "300px",
                     width: "250px",
                     borderRadius: "15px",
@@ -98,7 +86,6 @@ const Vacancy = ({ bloc }) => {
                   <CardActions>
                     <Button
                       size="small"
-                      textAlign="center"
                       sx={{
                         backgroundColor: "#521582",
                         color: "#FFFF",

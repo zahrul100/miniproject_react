@@ -12,7 +12,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import logo from '../../../asset/icon/logo.svg';
-
+import {Link} from "react-router-dom";
+ 
 const pages = ['Home', 'About Us', 'Program/Certification'];
 const settings = ['Profile', 'Logout'];
 
@@ -78,7 +79,11 @@ const ResponsiveAppBar = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}> 
-                  <Typography textAlign="center" color="secondary">{page}</Typography>
+                  <Typography textAlign="center" color="secondary">
+                    <Link to={`/${page}`}>
+                    {page}
+                    </Link>
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
