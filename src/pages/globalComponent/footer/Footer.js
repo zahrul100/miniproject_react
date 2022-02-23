@@ -2,21 +2,40 @@ import * as React from "react";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import logo from "../../../asset/icon/logo.svg";
-import { Typography } from "@mui/material";
+import { Container, Link, Typography } from "@mui/material";
+import fb from '../../../asset/image/facebook.png';
+import ig from '../../../asset/image/instagram.png';
+import linkedin from '../../../asset/image/linkedin.png';
+import spotify from '../../../asset/image/spotify.png';
+import tw from '../../../asset/image/twitter.png';
+import yt from '../../../asset/image/youtube.png';
 
 
+
+function Copyright() {
+  return (
+    <Typography variant="body2" color="text.secondary" textAlign="center">
+      {'Copyright © '}
+   
+       Techconnect Academy by Sinarmas Mining  
+  
+      {  new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
 
 const Footer = () => {
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{marginTop:"30px"}}>
       <Grid container>
-        <Grid item md={8} sm={12} xs={12}>
+        <Grid item md={6} sm={12} xs={12} textAlign="center">
           <Grid container>
-            <Grid item md={2}>
+            <Grid item md={2} textAlign="center">
               <img
                 src={logo}
                 alt="tca-logo"
-                style={{ height: "100px", width: "100px" }}
+                style={{ height: "100px", width: "100px"}}
               />
             </Grid>
             <Grid md={5}>
@@ -28,40 +47,41 @@ const Footer = () => {
                 marginLeft="20px"
               >
                 Jl. Jend Sudirman no.Kav 21 RT 10/ RW 1
-                <br />
+           
                 Kuningan, Karet, Kecamatan Setiabudi
-                <br />
+        
                 Kota Jakarta Selatan, DKI Jakarta 12920, Indonesia
-                <br />
+                <br/>
                 (021) 5018 6888
               </Typography>
             </Grid>
           </Grid>
         </Grid>
-        <Grid item md={4}>
+        <Grid item md={6} textAlign="center">
           <Typography
             component="div"
-            textAlign="left"
+            textAlign="center"
             fontFamily="Montserrat"
             fontWeight="600"
-            marginLeft="20px"
           >
             CONNECT WITH US
           </Typography>
-          <Grid container>
-              <Grid item md={4}> 
-        
-              </Grid>
-              <Grid item md={4}> 
-         
-              </Grid>
-              <Grid item md={4}> 
-             
-              </Grid>
-          </Grid>
+          <Box display="flex" justifyContent="center" alignItems="center">
+          <img src={fb} alt="fb-icon" style={{width:"50px", height:"50px"}} />
+          <img src={ig} alt="ig-icon" style={{width:"50px", height:"50px"}} />
+          <img src={tw} alt="tw-icon" style={{width:"50px", height:"50px"}} />
+          </Box>
+          <Box display="flex" justifyContent="center" alignItems="center">
+          <img src={spotify} alt="sp-icon" style={{width:"50px", height:"50px"}} />
+          <img src={linkedin} alt="linkeind-icon" style={{width:"50px", height:"50px"}} />
+          <img src={yt} alt="yt-icon" style={{width:"50px", height:"50px"}} />
+          </Box>
          
         </Grid>
       </Grid>
+      <Container maxWidth="sm">
+          <Copyright />
+        </Container>
     </Box>
   );
 };
