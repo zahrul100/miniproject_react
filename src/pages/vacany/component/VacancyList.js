@@ -4,6 +4,7 @@ import {
   Card,
   Typography,
   Button,
+  Grid,
 } from "@mui/material";
 import MyComponent from "../../homepage/HomeStyle";
 import { useEffect } from "react";
@@ -12,7 +13,7 @@ import program2 from "../../../asset/image/program2.png";
 import program3 from "../../../asset/image/program3.png";
 import program4 from "../../../asset/image/program4.png";
 import Box from "@mui/material/Box";
-import ResponsiveAppBar from '../../globalComponent/navbar/Appbar';
+import ResponsiveAppBar from "../../globalComponent/navbar/Appbar";
 import Footer from "../../globalComponent/footer/Footer";
 import PaginationRounded from "../../globalComponent/pagination/Pagination";
 
@@ -45,60 +46,76 @@ const Vacancy = ({ bloc }) => {
       <MyComponent>
         <ResponsiveAppBar />
         <Typography
-          variant="h3"
           textAlign="center"
           fontFamily="Montserrat Alternates"
-          fontSize="55px"
           fontWeight="550"
           letterSpacing="7px"
-          sx={{ color: "#434343" }}
           paddingY="40px"
+          sx={{ color:"#434343",
+          typography: {lg:"h2",sm: 'h5', xs: 'h5',  fontFamily:"Montserrat Alternates"},
+          }}
         >
           Find your dream career in
           <br />
           Techconnect Academy
         </Typography>
-        <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent:"center",
-                alignItems:"center"
-              }}
-            >
-        {list.map((value, idx) => {
-          return (
-              <Card
-                key={idx}
-                sx={{
-                  backgroundImage: `url(${program4})`,
-                  height: "300px",
-                  width: "250px",
-                  borderRadius: "15px",
-                  marginX:"10px"
-                }}
-              >
-                <CardContent
+        <Grid
+          container
+          spacing={0}
+          direction="row"
+          alignItems="center"
+          justifyContent="center"
+        >
+          {list.map((value, idx) => {
+            return (
+              <Grid items md={6} sm={12} xs={12} sx={{ marginBottom: "15px" }}>
+                <Card
+                  key={idx}
                   sx={{
-                    marginY:"20px"
+                    backgroundImage: `${value.photo_url}`,
+                    height: "300px",
+                    width: "250px",
+                    borderRadius: "15px",
+                    marginX: "10px",
                   }}
                 >
-                  <Typography variant="h5" component="div" textAlign="center" color="#FFFF" fontFamily="Montserrat" fontWeight="600">
-                    {value.headline}
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                <Button size="small" textAlign="center" 
-                  sx={{backgroundColor:"#521582", color:"#FFFF", fontFamily:"Montserrat", fontSize:"16px", marginLeft:"20px"}}
-                  onClick={() => navigate(`/vacancy/${value.id}`)}>
-                    See Details
-                  </Button>
-                </CardActions>
-              </Card>
-            
-          );
-        })}
-        </Box>
+                  <CardContent
+                    sx={{
+                      marginY: "20px",
+                    }}
+                  >
+                    <Typography
+                      variant="h5"
+                      component="div"
+                      textAlign="center"
+                      color="#FFFF"
+                      fontFamily="Montserrat"
+                      fontWeight="600"
+                    >
+                      {value.headline}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button
+                      size="small"
+                      textAlign="center"
+                      sx={{
+                        backgroundColor: "#521582",
+                        color: "#FFFF",
+                        fontFamily: "Montserrat",
+                        fontSize: "16px",
+                        marginLeft: "20px",
+                      }}
+                      onClick={() => navigate(`/vacancy/${value.id}`)}
+                    >
+                      See Details
+                    </Button>
+                  </CardActions>
+                </Card>
+              </Grid>
+            );
+          })}
+        </Grid>
         <PaginationRounded />
         <Footer />
       </MyComponent>

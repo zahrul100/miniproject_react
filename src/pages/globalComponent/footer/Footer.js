@@ -4,6 +4,8 @@ import Box from "@mui/material/Box";
 import logo from "../../../asset/icon/logo.svg";
 import { Typography } from "@mui/material";
 
+
+
 const Footer = () => {
   return (
     <Box sx={{ width: "100%" }}>
@@ -46,6 +48,17 @@ const Footer = () => {
           >
             CONNECT WITH US
           </Typography>
+          <Grid container>
+              <Grid item md={4}> 
+        
+              </Grid>
+              <Grid item md={4}> 
+         
+              </Grid>
+              <Grid item md={4}> 
+             
+              </Grid>
+          </Grid>
          
         </Grid>
       </Grid>

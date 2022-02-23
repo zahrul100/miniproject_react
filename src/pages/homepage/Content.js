@@ -9,17 +9,31 @@ import program1 from "../../asset/image/program1.png";
 import program2 from "../../asset/image/program2.png";
 import program3 from "../../asset/image/program3.png";
 import program4 from "../../asset/image/program4.png";
+import { useNavigate } from "react-router";
 
 const Content = () => {
+  let navigate = useNavigate();
   return (
     <Box>
-      <Grid container sx={{paddingTop:"10px"}}>
-        <Grid items md={5} sm={12} xs={12}  >
+      <Grid container sx={{ paddingTop: "10px" }}>
+        <Grid items md={5} sm={12} xs={12}>
           <Typography
-            variant="h3"
-            fontFamily="Montserrat Alternates"
-            fontWeight="600"
-            textAlign="left"
+            textAlign="center"
+            sx={{
+              typography: { lg: "h3", sm: "h4", xs: "h4" },
+              fontWeight: {
+                lg: "600",
+                md: "600",
+                sm: "600",
+                xs: "600",
+              },
+              fontFamily: {
+                lg: "Montserrat Alternates",
+                md: "Montserrat Alternates",
+                sm: "Montserrat Alternates",
+                xs: "Montserrat Alternates",
+              },
+            }}
           >
             Prepare for a career in The Future of Programming
           </Typography>
@@ -39,12 +53,14 @@ const Content = () => {
           >
             <Button
               variant="contained"
+              onClick={() => navigate("/register")}
               sx={{ backgroundColor: "#521582", marginRight: "20px" }}
             >
               Sign Up
             </Button>
             <Button
               variant="outlined"
+              onClick={() => navigate("/login")}
               sx={{ color: "#521582", borderColor: "#521582" }}
             >
               Login
@@ -52,21 +68,41 @@ const Content = () => {
           </Box>
         </Grid>
         <Grid item md={7} sm={12} xs={12}>
-          <img src={image1} alt="image1" style={{maxWidth:"745px"}} />
+          <img
+            src={image1}
+            alt="image1"
+            style={{ width: "-webkit-fill-available" }}
+          />
         </Grid>
       </Grid>
       <Grid container>
         <Grid item md={6} sm={12} xs={12}>
-          <img src={image2} alt="image2" />
+          <img
+            src={image2}
+            alt="image2"
+            style={{ width: "-webkit-fill-available" }}
+          />
         </Grid>
 
         <Grid items md={6} sm={12} xs={12}>
           <Typography
-            variant="h3"
-            fontFamily="Montserrat Alternates"
-            fontWeight="600"
             letterSpacing="5px"
             textAlign="center"
+            sx={{
+              typography: { lg: "h3", sm: "h4", xs: "h4" },
+              fontWeight: {
+                lg: "600",
+                md: "600",
+                sm: "600",
+                xs: "600",
+              },
+              fontFamily: {
+                lg: "Montserrat Alternates",
+                md: "Montserrat Alternates",
+                sm: "Montserrat Alternates",
+                xs: "Montserrat Alternates",
+              },
+            }}
           >
             Techconnect Academy
           </Typography>
@@ -85,19 +121,31 @@ const Content = () => {
         </Grid>
       </Grid>
       <Typography
-        variant="h3"
-        fontFamily="Montserrat Alternates"
-        fontWeight="500"
         letterSpacing="5px"
         color="#343434"
         textAlign="center"
         paddingTop="10px"
+        sx={{
+          typography: { lg: "h3", sm: "h4", xs: "h4" },
+          fontWeight: {
+            lg: "600",
+            md: "600",
+            sm: "600",
+            xs: "600",
+          },
+          fontFamily: {
+            lg: "Montserrat Alternates",
+            md: "Montserrat Alternates",
+            sm: "Montserrat Alternates",
+            xs: "Montserrat Alternates",
+          },
+        }}
       >
         Program We Offer at <br /> Techconnect Academy
       </Typography>
 
-      <Grid container paddingX="10px" marginTop="30px">
-        <Grid item md={3} sm={12} xs={12} sx={{marginBottom:"10px"}}>
+      <Grid container paddingX="10px" marginTop="30px" justifyContent="center">
+        <Grid item md={3} sm={12} xs={12} sx={{ marginBottom: "10px" }}>
           <Card
             sx={{
               borderRadius: "15px",
@@ -107,21 +155,19 @@ const Content = () => {
             }}
           >
             <CardContent>
-              <Box display="flex" justifyContent="center" alignItems="flex-end">
-                <Typography
-                  variant="h4"
-                  fontFamily="Montserrat"
-                  fontWeight="600"
-                  color="#FFFF"
-                  textAlign="center"
-                >
-                  Vocational Program
-                </Typography>
-              </Box>
+              <Typography
+                variant="h4"
+                fontFamily="Montserrat"
+                fontWeight="600"
+                color="#FFFF"
+                textAlign="center"
+              >
+                Vocational Program
+              </Typography>
             </CardContent>
           </Card>
         </Grid>
-        <Grid item md={3} sm={12} xs={12} sx={{marginBottom:"10px"}}>
+        <Grid item md={3} sm={12} xs={12} sx={{ marginBottom: "10px" }}>
           <Card
             sx={{
               borderRadius: "15px",
@@ -131,21 +177,19 @@ const Content = () => {
             }}
           >
             <CardContent>
-              <Box display="flex" justifyContent="center" alignItems="flex-end">
-                <Typography
-                  variant="h4"
-                  fontFamily="Montserrat"
-                  fontWeight="600"
-                  color="#FFFF"
-                  textAlign="center"
-                >
-                  Fresh Graduate Program
-                </Typography>
-              </Box>
+              <Typography
+                variant="h4"
+                fontFamily="Montserrat"
+                fontWeight="600"
+                color="#FFFF"
+                textAlign="center"
+              >
+                Fresh Graduate Program
+              </Typography>
             </CardContent>
           </Card>
         </Grid>
-        <Grid item md={3} sm={12} xs={12} sx={{marginBottom:"10px"}}>
+        <Grid item md={3} sm={12} xs={12} sx={{ marginBottom: "10px" }}>
           <Card
             sx={{
               borderRadius: "15px",
@@ -155,21 +199,19 @@ const Content = () => {
             }}
           >
             <CardContent>
-              <Box display="flex" justifyContent="center" alignItems="flex-end">
-                <Typography
-                  variant="h4"
-                  fontFamily="Montserrat"
-                  fontWeight="600"
-                  color="#FFFF"
-                  textAlign="center"
-                >
-                  IT <br/> Professional Program
-                </Typography>
-              </Box>
+              <Typography
+                variant="h4"
+                fontFamily="Montserrat"
+                fontWeight="600"
+                color="#FFFF"
+                textAlign="center"
+              >
+                IT <br /> Professional Program
+              </Typography>
             </CardContent>
           </Card>
         </Grid>
-        <Grid item md={3} sm={12} xs={12} sx={{marginBottom:"10px"}}>
+        <Grid item md={3} sm={12} xs={12} sx={{ marginBottom: "10px" }}>
           <Card
             sx={{
               borderRadius: "15px",
@@ -179,17 +221,15 @@ const Content = () => {
             }}
           >
             <CardContent>
-              <Box display="flex" justifyContent="center" alignItems="flex-end">
-                <Typography
-                  variant="h4"
-                  fontFamily="Montserrat"
-                  fontWeight="600"
-                  color="#FFFF"
-                  textAlign="center"
-                >
-                  IT Development Program
-                </Typography>
-              </Box>
+              <Typography
+                variant="h4"
+                fontFamily="Montserrat"
+                fontWeight="600"
+                color="#FFFF"
+                textAlign="center"
+              >
+                IT Development Program
+              </Typography>
             </CardContent>
           </Card>
         </Grid>
